@@ -1,4 +1,6 @@
 ﻿using DomainLayer.Models;
+using DomainLayer.ModelViews;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,67 +10,69 @@ using System.Threading.Tasks;
 
 namespace RepositoryLayer.Repositories
 {
-    public class PeopleRepository<T> : IPeopleRepository<T> where T : People
+    public class PeopleRepository
     {
         private readonly ApplicationDbContext _applicationDbContext;
-        private DbSet<T> entities;
+        
 
         public PeopleRepository(ApplicationDbContext context)
         {
             _applicationDbContext = context;
-            entities = _applicationDbContext.Set<T>();  
         }
-        public void Delete(T entity)
+        public void Delete(People people)
         {
-            if (entity == null)
+            if (people == null)
             {
-                throw new ArgumentNullException("entity");
+                throw new ArgumentNullException("People not found");
             }
-            entities.Remove(entity);
+            _applicationDbContext.Remove(people);
             _applicationDbContext.SaveChanges();
         }
 
-        public T Get(int Id)
+
+        public People Get(int id)
         {
-            return entities.SingleOrDefault(c => c.Id == Id);
+            var people = _applicationDbContext.people.SingleOrDefault(p => p.Id == id);
+            return people;
+            
         }
 
-        public IEnumerable<T> GetAll()
+
+       
+        public List<People> GetAll(Pagination @params)
         {
-            return entities.AsEnumerable();
+            var peopleData =  _applicationDbContext.people
+                .OrderBy(p => p.Id)
+                .Skip((@params.Page - 1) * @params.ItemsPerPage)
+                .Take(@params.ItemsPerPage)
+                .ToList();
+
+            return peopleData;
         }
 
-        public void Insert(T entity)
+        public void Insert(People people)
         {
-            if (entity == null)
+            if (people == null)
             {
-                throw new ArgumentNullException("entity");
+                throw new ArgumentNullException("Model invalid");
             }
-            entities.Add(entity);
+            _applicationDbContext.people.Add(people);
             _applicationDbContext.SaveChanges();
         }
 
-        public void Remove(T entity)
-        {
-            if (entity == null)
-            {
-                throw new ArgumentNullException("entity");
-            }
-            entities.Remove(entity);
-        }
 
         public void SaveChanges()
         {
             _applicationDbContext.SaveChanges();
         }
 
-        public void Update(T entity)
+        public void Update(People people)
         {
-            if (entity == null)
+            if (people == null)
             {
-                throw new ArgumentNullException("entity");
+                throw new ArgumentNullException("Model Invalid");
             }
-            entities.Update(entity);
+            _applicationDbContext.Update(people);
             _applicationDbContext.SaveChanges();
         }
     }

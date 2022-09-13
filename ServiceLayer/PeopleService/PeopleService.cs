@@ -1,4 +1,5 @@
 ﻿using DomainLayer.Models;
+using DomainLayer.ModelViews;
 using RepositoryLayer.Repositories;
 using System;
 using System.Collections.Generic;
@@ -8,39 +9,38 @@ using System.Threading.Tasks;
 
 namespace ServiceLayer.PeopleService
 {
-    public class PeopleService: IPeopleService
+    public class PeopleService
     {
-        private IPeopleRepository<People> _repository;
+        private PeopleRepository _repository;
         
-        public PeopleService(IPeopleRepository<People> repository)
+        public PeopleService(PeopleRepository repository)
         {
             _repository = repository;
         }
 
-        public IEnumerable<People> GetAllPeople()
+        public List<People> GetAll(Pagination @params)
         {
-            return _repository.GetAll();
+            return _repository.GetAll(@params);
         }
 
-        public People GetPeople(int id)
+        public People GetById(int id)
         {
             return _repository.Get(id);
         }
 
-        public void InsertPeople(People people)
+        public void Insert(People people)
         {
             _repository.Insert(people);
         }
-        public void UpdatePeople(People people)
+        public void Update(People people)
         {
             _repository.Update(people);
         }
 
-        public void DeletePeople(int id)
+        public void Delete(int id)
         {
-            People people = GetPeople(id);
-            _repository.Remove(people);
-            _repository.SaveChanges();
+            People people = GetById(id);
+            _repository.Delete(people);
         }
     }
 }

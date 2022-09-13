@@ -1,4 +1,5 @@
 ﻿using DomainLayer.Models;
+using DomainLayer.ModelViews;
 using Microsoft.AspNetCore.Mvc;
 using ServiceLayer.PeopleService;
 
@@ -8,54 +9,59 @@ namespace OnionArch.Controllers
     [ApiController]
     public class PeopleController : Controller
     {
-        private readonly IPeopleService _peopleService;
+        private readonly PeopleService _peopleService;
 
-        public PeopleController(IPeopleService peopleService)
+        public PeopleController(PeopleService peopleService)
         {
             _peopleService = peopleService; 
         }
 
-        [HttpGet(nameof(GetPeople))]
-        public IActionResult GetPeople(int id)
+        [HttpGet (nameof(GetById))]
+        public IActionResult GetById(int id)
         {
-            var result = _peopleService.GetPeople(id);
+            var result = _peopleService.GetById(id);
             if (result is not null)
             {
                 return Ok(result);
             }
-            return BadRequest("No records found");
+            return BadRequest("People not found");
 
         }
-        [HttpGet(nameof(GetAllPeople))]
-        public IActionResult GetAllPeople()
+
+
+        [HttpGet(nameof(GetAll))]
+        public IActionResult GetAll([FromQuery] Pagination @params)
         {
-            var result = _peopleService.GetAllPeople();
+            var result = _peopleService.GetAll(@params);
             if (result is not null)
             {
                 return Ok(result);
             }
-            return BadRequest("No records found");
+            return BadRequest("No records");
 
         }
-        [HttpPost(nameof(InsertPeople))]
-        public IActionResult InsertPeople(People people)
+
+        [HttpPost(nameof(Insert))]
+        public IActionResult Insert(People people)
         {
-            _peopleService.InsertPeople(people);
-            return Ok("Data inserted");
+            _peopleService.Insert(people);
+            return Ok("New People Added");
 
         }
-        [HttpPut(nameof(UpdatePeople))]
-        public IActionResult UpdatePeople(People people)
+
+        [HttpPut(nameof(Update))]
+        public IActionResult Update(People people)
         {
-            _peopleService.UpdatePeople(people);
-            return Ok("Updae done");
+            _peopleService.Update(people);
+            return Ok("People Updated");
 
         }
-        [HttpDelete(nameof(DeletePeople))]
-        public IActionResult DeletePeople(int Id)
+
+        [HttpDelete(nameof(Delete))]
+        public IActionResult Delete(int Id)
         {
-            _peopleService.DeletePeople(Id);
-            return Ok("Data Deleted");
+            _peopleService.Delete(Id);
+            return Ok("People Deleted");
 
         }
     }

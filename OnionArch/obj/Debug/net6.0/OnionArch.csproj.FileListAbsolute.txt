@@ -65,3 +65,7 @@ C:\Users\bhara\Desktop\AppDev Final\OnionArch\OnionArch\bin\Debug\net6.0\Service
 C:\Users\bhara\Desktop\AppDev Final\OnionArch\OnionArch\bin\Debug\net6.0\ServiceLayer.pdb
 C:\Users\bhara\Desktop\AppDev Final\OnionArch\OnionArch\bin\Debug\net6.0\DomainLayer.pdb
 C:\Users\bhara\Desktop\AppDev Final\OnionArch\OnionArch\bin\Debug\net6.0\RepositoryLayer.pdb
+C:\Users\bhara\Desktop\AppDev Final\OnionArch\OnionArch\bin\Debug\net6.0\Bogus.dll
+C:\Users\bhara\Desktop\AppDev Final\OnionArch\OnionArch\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\bhara\Desktop\AppDev Final\OnionArch\OnionArch\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\bhara\Desktop\AppDev Final\OnionArch\OnionArch\bin\Debug\net6.0\Newtonsoft.Json.dll

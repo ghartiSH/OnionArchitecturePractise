@@ -16,10 +16,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped(typeof(IPeopleRepository<>), typeof(PeopleRepository<>));
-builder.Services.AddTransient<IPeopleService, PeopleService>();
+
+//adding services and repositories
+builder.Services.AddScoped(typeof(PeopleRepository));
+builder.Services.AddTransient<PeopleService>();
 
 var app = builder.Build();
+
+
+//adding dbcontext service and calling data seed function
+using var scope = app.Services.CreateScope();
+var db = scope.ServiceProvider.GetService<ApplicationDbContext>();
+db.AddData().GetAwaiter().GetResult();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
