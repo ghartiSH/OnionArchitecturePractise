@@ -61,10 +61,6 @@ namespace RepositoryLayer.Repositories
         }
 
 
-        public void SaveChanges()
-        {
-            _applicationDbContext.SaveChanges();
-        }
 
         public void Update(People people)
         {

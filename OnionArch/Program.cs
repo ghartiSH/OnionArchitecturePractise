@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Models;
 using RepositoryLayer;
 using RepositoryLayer.Repositories;
 using ServiceLayer.PeopleService;
+using ServiceLayer.ProductService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +20,10 @@ builder.Services.AddSwaggerGen();
 
 //adding services and repositories
 builder.Services.AddScoped(typeof(PeopleRepository));
+builder.Services.AddScoped(typeof(ProductRepository));
 builder.Services.AddTransient<PeopleService>();
+builder.Services.AddTransient<ProductService>();
+
 
 var app = builder.Build();
 

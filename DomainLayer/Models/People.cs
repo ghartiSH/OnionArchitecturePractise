@@ -17,6 +17,8 @@ namespace DomainLayer.Models
         public string? Email { get; set; }
         [Required]
         public string? Address { get; set; } 
+        public ICollection<Product>? Products { get; set; }
+
 
 
     }
