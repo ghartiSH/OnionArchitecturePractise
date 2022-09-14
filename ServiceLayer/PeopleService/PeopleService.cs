@@ -18,9 +18,16 @@ namespace ServiceLayer.PeopleService
             _repository = repository;
         }
 
+        //for web-api with pagination
         public List<People> GetAll(Pagination @params)
         {
             return _repository.GetAll(@params);
+        }
+
+        //for webapp without pagination
+        public List<People> GetAll()
+        {
+            return _repository.GetAll();
         }
 
         public People GetById(int id)

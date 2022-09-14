@@ -1,0 +1,60 @@
+﻿@model List<PeopleViewModel>
+
+<!DOCTYPE html>
+
+<title>People</title>
+<div>
+    <div>
+        <p>
+            People List
+        </p>
+        <a id="editUserModal" data-toggle="modal" asp-action="AddPeople" data-target="#modal-action-user"
+           class="btn btn-info">
+            <i class="glyphicon glyphicon-pencil"></i> Add New People
+        </a>
+    </div>
+    <div>
+        <table class="col-md-12">
+            <thead>
+
+                <tr>
+                    <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    Actions
+                </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                        <td>
+                            <a id="editPeopleModal" data-toggle="modal" asp-action="EditPeople" asp-route-id="@item.Id" data-target="#modal-action-people"
+                           class="btn btn-info">
+                                <i class="glyphicon glyphicon-pencil"></i> Edit
+                            </a>
+                            <a id="deletePeopleModal" data-toggle="modal" asp-action="DeletePeople" asp-route-id="@item.Id" data-target="#modal-action-people" class="btn btn-danger">
+                                <i class="glyphicon glyphicon-trash"></i> Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

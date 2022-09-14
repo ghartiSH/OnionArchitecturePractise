@@ -1,0 +1,55 @@
+﻿@model List<ProductViewModel>
+
+<!DOCTYPE html>
+
+<title>Product</title>
+<div>
+    <div>
+        <p>
+            Product List
+        </p>
+        <a id="addProductModal" data-toggle="modal" asp-action="AddProduct" data-target="#modal-action-product"
+           class="btn btn-info">
+            <i class="glyphicon glyphicon-pencil"></i> Add New Product
+        </a>
+    </div>
+    <div>
+        <table class="col-md-12">
+            <thead>
+
+                <tr>
+                    <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Actions
+                </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                        <td>
+                            <a id="editProductModal" data-toggle="modal" asp-action="EditProduct" asp-route-id="@item.Id" data-target="#modal-action-product" class="btn btn-info">
+                                <i class="glyphicon glyphicon-pencil"></i> Edit
+                            </a>
+                            <a id="deleteProductModal" data-toggle="modal" asp-action="DeleteProduct" asp-route-id="@item.Id" data-target="#modal-action-product" class="btn btn-danger">
+                                <i class="glyphicon glyphicon-trash"></i> Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+     </div>
+</div>

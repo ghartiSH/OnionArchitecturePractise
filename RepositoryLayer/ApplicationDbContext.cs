@@ -49,7 +49,7 @@ namespace RepositoryLayer
                     .RuleFor(p => p.Name, f => f.Person.FullName)
                     .RuleFor(p => p.Email, f => f.Person.Email)
                     .RuleFor(p => p.Address, f => f.Address.City())
-                    ).Generate(10000);
+                    ).Generate(100);
 
                 foreach(var people in fakePeople)
                 {

@@ -48,6 +48,13 @@ namespace RepositoryLayer.Repositories
             return productData;
         }
 
+        public List<Product> GetAll()
+        {
+            var productData = _applicationDbContext.products.ToList();
+
+            return productData;
+        }
+
         public void Insert(Product product)
         {
             if (product == null)

@@ -23,6 +23,11 @@ namespace ServiceLayer.ProductService
             return _repository.GetAll(@params);
         }
 
+        public List<Product> GetAll()
+        {
+            return _repository.GetAll();
+        }
+
         public Product GetById(int id)
         {
             return _repository.Get(id);

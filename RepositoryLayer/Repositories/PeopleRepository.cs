@@ -38,15 +38,22 @@ namespace RepositoryLayer.Repositories
         }
 
 
-       
+        //for web-api with pagination
         public List<People> GetAll(Pagination @params)
         {
-            var peopleData =  _applicationDbContext.people
+            var peopleData = _applicationDbContext.people
                 .OrderBy(p => p.Id)
                 .Skip((@params.Page - 1) * @params.ItemsPerPage)
                 .Take(@params.ItemsPerPage)
                 .ToList();
 
+            return peopleData;
+        }
+
+        //for webapp without pagination
+        public List<People> GetAll()
+        {
+            var peopleData = _applicationDbContext.people.ToList();
             return peopleData;
         }
 
