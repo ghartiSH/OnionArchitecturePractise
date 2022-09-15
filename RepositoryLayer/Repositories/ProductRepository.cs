@@ -21,7 +21,7 @@ namespace RepositoryLayer.Repositories
         {
             if (product == null)
             {
-                throw new ArgumentNullException("People not found");
+                throw new ArgumentNullException("Product not found");
             }
             _applicationDbContext.Remove(product);
             _applicationDbContext.SaveChanges();

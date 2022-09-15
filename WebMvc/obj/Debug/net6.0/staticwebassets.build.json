@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zVrXaBE4nDGpQ/J1IWqLR7rG79/+6MUAE1oB8d1TE2s=",
+  "Hash": "5hsbjL8hKI3ZXcVfBc101ps54ox2ILR6G+3qP1O3WdQ=",
   "Source": "WebMvc",
   "BasePath": "_content/WebMvc",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\bhara\\Desktop\\AppDev Final\\OnionArch\\WebMvc\\wwwroot\\js\\People\\People.js",
+      "SourceId": "WebMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bhara\\Desktop\\AppDev Final\\OnionArch\\WebMvc\\wwwroot\\",
+      "BasePath": "_content/WebMvc",
+      "RelativePath": "js/People/People.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\People\\People.js"
     },
     {
       "Identity": "C:\\Users\\bhara\\Desktop\\AppDev Final\\OnionArch\\WebMvc\\wwwroot\\js\\site.js",
