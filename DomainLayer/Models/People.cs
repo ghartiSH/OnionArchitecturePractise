@@ -10,15 +10,15 @@ namespace DomainLayer.Models
     public class People
     {
         [Key]   
-        public int Id { get; set; }
+        public int PeopleId { get; set; }
         [Required]
         public string? Name { get; set; }
         [Required]
         public string? Email { get; set; }
         [Required]
         public string? Address { get; set; } 
-        public ICollection<Product>? Products { get; set; }
 
+        public ICollection<Product>? Products { get; set; }
 
 
     }

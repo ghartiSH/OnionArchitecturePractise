@@ -51,19 +51,20 @@ namespace RepositoryLayer
                     .RuleFor(p => p.Address, f => f.Address.City())
                     ).Generate(100);
 
-                foreach(var people in fakePeople)
+                await people.AddRangeAsync(fakePeople);
+                await SaveChangesAsync();
+
+                foreach (var people in fakePeople)
                 {
-                    
                     var fakeProduct = (new Faker<Product>()
                         .RuleFor(p => p.ProductName, f => f.Commerce.ProductName())
                         .RuleFor(p => p.Price, f => f.PickRandom(price))
+                        .RuleFor(p => p.PeopleId, f=> people.PeopleId)
                         ).GenerateBetween(1, 2);
 
-                    people.Products = fakeProduct;
-                }
-
-                await people.AddRangeAsync(fakePeople);
-                await SaveChangesAsync();
+                    await products.AddRangeAsync(fakeProduct);
+                    await SaveChangesAsync();
+                }  
             }
         }
 

@@ -30,7 +30,7 @@ namespace RepositoryLayer.Repositories
 
         public Product Get(int id)
         {
-            var product = _applicationDbContext.products.SingleOrDefault(p => p.Id == id);
+            var product = _applicationDbContext.products.SingleOrDefault(p => p.ProductId == id);
             return product;
 
         }
@@ -40,7 +40,7 @@ namespace RepositoryLayer.Repositories
         public List<Product> GetAll(Pagination @params)
         {
             var productData = _applicationDbContext.products
-                .OrderBy(p => p.Id)
+                .OrderBy(p => p.ProductId)
                 .Skip((@params.Page - 1) * @params.ItemsPerPage)
                 .Take(@params.ItemsPerPage)
                 .ToList();

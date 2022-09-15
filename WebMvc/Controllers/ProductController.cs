@@ -21,9 +21,10 @@ namespace WebMvc.Controllers
             {
                 ProductViewModel prodViewModel = new ProductViewModel
                 {
-                    Id = p.Id,
+                    Id = p.ProductId,
                     ProductName = p.ProductName,
                     Price = p.Price,
+                    PeopleId = p.PeopleId,
                 };
                 product.Add(prodViewModel);
             }
@@ -50,9 +51,10 @@ namespace WebMvc.Controllers
 
             ProductViewModel prodViewModel = new ProductViewModel
             {
-                Id = product.Id,
+                Id = product.ProductId,
                 ProductName = product.ProductName,
                 Price = product.Price,
+                PeopleId = product.PeopleId,
             };
             return View(prodViewModel);
         }
@@ -70,9 +72,10 @@ namespace WebMvc.Controllers
 
             ProductViewModel prodViewModel = new ProductViewModel
             {
-                Id =product.Id,
+                Id =product.ProductId,
                 ProductName = product.ProductName,
                 Price = product.Price,
+                PeopleId=product.PeopleId,
             };
             return View(prodViewModel);
         }
@@ -80,7 +83,7 @@ namespace WebMvc.Controllers
         [HttpPost]
         public IActionResult DeleteProduct(Product product)
         {
-            _productService.Delete(product.Id);
+            _productService.Delete(product.ProductId);
             return RedirectToAction("Index");
         }
     }

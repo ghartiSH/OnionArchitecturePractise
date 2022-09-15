@@ -21,7 +21,7 @@ namespace WebMvc.Controllers
             {
                 PeopleViewModel peopleViewModel = new PeopleViewModel
                 {
-                    Id = p.Id,
+                    Id = p.PeopleId,
                     Name = p.Name,
                     Email = p.Email,
                     Address = p.Address
@@ -51,7 +51,7 @@ namespace WebMvc.Controllers
 
             PeopleViewModel peopleViewModel = new PeopleViewModel
             {
-                Id = people.Id,
+                Id = people.PeopleId,
                 Name = people.Name,
                 Email = people.Email,
                 Address = people.Address
@@ -72,7 +72,7 @@ namespace WebMvc.Controllers
 
             PeopleViewModel peopleViewModel = new PeopleViewModel
             {
-                Id = people.Id,
+                Id = people.PeopleId,
                 Name = people.Name,
                 Email = people.Email,
                 Address = people.Address
@@ -83,7 +83,7 @@ namespace WebMvc.Controllers
         [HttpPost]
         public IActionResult DeletePeople(People people)
         {
-            _peopleService.Delete(people.Id);
+            _peopleService.Delete(people.PeopleId);
             return RedirectToAction("Index");
         }
 

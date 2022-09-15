@@ -32,7 +32,7 @@ namespace RepositoryLayer.Repositories
 
         public People Get(int id)
         {
-            var people = _applicationDbContext.people.SingleOrDefault(p => p.Id == id);
+            var people = _applicationDbContext.people.SingleOrDefault(p => p.PeopleId == id);
             return people;
             
         }
@@ -42,7 +42,7 @@ namespace RepositoryLayer.Repositories
         public List<People> GetAll(Pagination @params)
         {
             var peopleData = _applicationDbContext.people
-                .OrderBy(p => p.Id)
+                .OrderBy(p => p.PeopleId)
                 .Skip((@params.Page - 1) * @params.ItemsPerPage)
                 .Take(@params.ItemsPerPage)
                 .ToList();
