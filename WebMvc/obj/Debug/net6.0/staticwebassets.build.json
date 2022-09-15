@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5hsbjL8hKI3ZXcVfBc101ps54ox2ILR6G+3qP1O3WdQ=",
+  "Hash": "SUDUF/NGGG+5TOkuP/rX9ExwFnme/qufgVLzqKNSCbk=",
   "Source": "WebMvc",
   "BasePath": "_content/WebMvc",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\People\\People.js"
+    },
+    {
+      "Identity": "C:\\Users\\bhara\\Desktop\\AppDev Final\\OnionArch\\WebMvc\\wwwroot\\js\\Product\\Product.js",
+      "SourceId": "WebMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bhara\\Desktop\\AppDev Final\\OnionArch\\WebMvc\\wwwroot\\",
+      "BasePath": "_content/WebMvc",
+      "RelativePath": "js/Product/Product.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Product\\Product.js"
     },
     {
       "Identity": "C:\\Users\\bhara\\Desktop\\AppDev Final\\OnionArch\\WebMvc\\wwwroot\\js\\site.js",

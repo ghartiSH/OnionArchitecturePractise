@@ -21,7 +21,7 @@ namespace WebMvc.Controllers
             {
                 ProductViewModel prodViewModel = new ProductViewModel
                 {
-                    Id = p.ProductId,
+                    ProductId = p.ProductId,
                     ProductName = p.ProductName,
                     Price = p.Price,
                     PeopleId = p.PeopleId,
@@ -51,7 +51,7 @@ namespace WebMvc.Controllers
 
             ProductViewModel prodViewModel = new ProductViewModel
             {
-                Id = product.ProductId,
+                ProductId = product.ProductId,
                 ProductName = product.ProductName,
                 Price = product.Price,
                 PeopleId = product.PeopleId,
@@ -72,7 +72,7 @@ namespace WebMvc.Controllers
 
             ProductViewModel prodViewModel = new ProductViewModel
             {
-                Id =product.ProductId,
+                ProductId =product.ProductId,
                 ProductName = product.ProductName,
                 Price = product.Price,
                 PeopleId=product.PeopleId,

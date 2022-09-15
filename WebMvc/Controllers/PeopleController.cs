@@ -21,7 +21,7 @@ namespace WebMvc.Controllers
             {
                 PeopleViewModel peopleViewModel = new PeopleViewModel
                 {
-                    Id = p.PeopleId,
+                    PeopleId = p.PeopleId,
                     Name = p.Name,
                     Email = p.Email,
                     Address = p.Address
@@ -51,7 +51,7 @@ namespace WebMvc.Controllers
 
             PeopleViewModel peopleViewModel = new PeopleViewModel
             {
-                Id = people.PeopleId,
+                PeopleId = people.PeopleId,
                 Name = people.Name,
                 Email = people.Email,
                 Address = people.Address
@@ -70,9 +70,10 @@ namespace WebMvc.Controllers
         {
             var people = _peopleService.GetById(id);
 
+
             PeopleViewModel peopleViewModel = new PeopleViewModel
             {
-                Id = people.PeopleId,
+                PeopleId = people.PeopleId,
                 Name = people.Name,
                 Email = people.Email,
                 Address = people.Address

@@ -33,8 +33,7 @@ namespace RepositoryLayer.Repositories
         public People Get(int id)
         {
             var people = _applicationDbContext.people.SingleOrDefault(p => p.PeopleId == id);
-            return people;
-            
+            return people; 
         }
 
 

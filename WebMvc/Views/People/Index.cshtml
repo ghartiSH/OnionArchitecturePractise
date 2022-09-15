@@ -39,16 +39,16 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PeopleId)</td>
                         <td>@Html.DisplayFor(modelItem => item.Name)</td>
                         <td>@Html.DisplayFor(modelItem => item.Email)</td>
                         <td>@Html.DisplayFor(modelItem => item.Address)</td>
                         <td>
-                            <a id="editPeopleModal" data-toggle="modal" asp-action="EditPeople" asp-route-id="@item.Id" data-target="#modal-action-people"
+                            <a id="editPeopleModal" data-toggle="modal" asp-action="EditPeople" asp-route-id="@item.PeopleId" data-target="#modal-action-people"
                            class="btn btn-info">
                                 <i class="glyphicon glyphicon-pencil"></i> Edit
                             </a>
-                            <a id="deletePeopleModal" data-toggle="modal" asp-action="DeletePeople" asp-route-id="@item.Id" data-target="#modal-action-people" class="btn btn-danger">
+                            <a id="deletePeopleModal" data-toggle="modal" asp-action="DeletePeople" asp-route-id="@item.PeopleId" data-target="#modal-action-people" class="btn btn-danger">
                                 <i class="glyphicon glyphicon-trash"></i> Delete
                             </a>
                         </td>

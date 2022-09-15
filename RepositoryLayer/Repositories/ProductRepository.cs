@@ -35,8 +35,6 @@ namespace RepositoryLayer.Repositories
 
         }
 
-
-
         public List<Product> GetAll(Pagination @params)
         {
             var productData = _applicationDbContext.products
