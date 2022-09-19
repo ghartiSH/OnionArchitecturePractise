@@ -44,12 +44,15 @@ namespace RepositoryLayer
             if (!(await people.AnyAsync()))
             {
                 var price = new int[] { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 };
-                
+                var phone = new string[] { "9874561230", "9874563320", "9856230147", "9874120365"};
+                var payment = new string[] { "Cash", "Card", "Online" };
                 var fakePeople = (new Faker<People>()
                     .RuleFor(p => p.Name, f => f.Person.FullName)
                     .RuleFor(p => p.Email, f => f.Person.Email)
                     .RuleFor(p => p.Address, f => f.Address.City())
-                    ).Generate(100);
+                    .RuleFor(p => p.PhoneNumber, f=> f.PickRandom(phone))
+                    .RuleFor(p => p.PaymentType, f=> f.PickRandom(payment))
+                    ).Generate(20);
 
                 await people.AddRangeAsync(fakePeople);
                 await SaveChangesAsync();

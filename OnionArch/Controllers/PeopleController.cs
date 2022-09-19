@@ -44,16 +44,24 @@ namespace OnionArch.Controllers
         [HttpPost(nameof(Insert))]
         public IActionResult Insert(People people)
         {
-            _peopleService.Insert(people);
-            return Ok("New People Added");
-
+            if (ModelState.IsValid)
+            {
+                _peopleService.Insert(people);
+                return Ok("New People Added");
+            }
+            return BadRequest("Invalid fields found");
         }
 
         [HttpPut(nameof(Update))]
         public IActionResult Update(People people)
         {
-            _peopleService.Update(people);
-            return Ok("People Updated");
+            if (ModelState.IsValid)
+            {
+                _peopleService.Update(people);
+                return Ok("People Updated");
+            }
+            return BadRequest("Invalid fields found");
+           
 
         }
 

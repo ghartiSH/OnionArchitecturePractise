@@ -31,6 +31,12 @@
                     Address
                 </th>
                 <th>
+                    Phone Number
+                </th>
+                <th>
+                    Payment Type
+                </th>
+                <th>
                     Actions
                 </th>
                 </tr>
@@ -43,6 +49,9 @@
                         <td>@Html.DisplayFor(modelItem => item.Name)</td>
                         <td>@Html.DisplayFor(modelItem => item.Email)</td>
                         <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PaymentType)</td>
+
                         <td>
                             <a id="editPeopleModal" data-toggle="modal" asp-action="EditPeople" asp-route-id="@item.PeopleId" data-target="#modal-action-people"
                            class="btn btn-info">

@@ -24,7 +24,9 @@ namespace WebMvc.Controllers
                     PeopleId = p.PeopleId,
                     Name = p.Name,
                     Email = p.Email,
-                    Address = p.Address
+                    Address = p.Address,
+                    PhoneNumber = p.PhoneNumber,
+                    PaymentType = p.PaymentType
                 };
                 people.Add(peopleViewModel);
             }
@@ -41,29 +43,41 @@ namespace WebMvc.Controllers
         [HttpPost]
         public IActionResult AddPeople(People people)
         {
-            _peopleService.Insert(people);
-            return RedirectToAction("Index");   
+            if (ModelState.IsValid)
+            {
+                _peopleService.Insert(people);
+                return RedirectToAction("Index");
+
+            }
+            return View(people);
         }
 
         public IActionResult EditPeople(int id)
         {
             var people = _peopleService.GetById(id);
 
-            PeopleViewModel peopleViewModel = new PeopleViewModel
+           /* PeopleViewModel peopleViewModel = new PeopleViewModel
             {
                 PeopleId = people.PeopleId,
                 Name = people.Name,
                 Email = people.Email,
-                Address = people.Address
-            };
-            return View(peopleViewModel);
+                Address = people.Address,
+                PhoneNumber = people.PhoneNumber,
+                PaymentType = people.PaymentType
+            };*/
+            return View(people);
         }
 
         [HttpPost]
         public IActionResult EditPeople(People people)
         {
-            _peopleService.Update(people);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _peopleService.Update(people);
+                return RedirectToAction("Index");
+
+            }
+            return View(people);
         }
 
         public IActionResult DeletePeople(int id)
@@ -76,7 +90,9 @@ namespace WebMvc.Controllers
                 PeopleId = people.PeopleId,
                 Name = people.Name,
                 Email = people.Email,
-                Address = people.Address
+                Address = people.Address,
+                PhoneNumber = people.PhoneNumber,
+                PaymentType = people.PaymentType
             };
             return View(peopleViewModel);
         }
