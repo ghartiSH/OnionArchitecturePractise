@@ -9,9 +9,9 @@ namespace OnionArch.Controllers
     [ApiController]
     public class PeopleController : Controller
     {
-        private readonly PeopleService _peopleService;
+        private readonly IPeopleService _peopleService;
 
-        public PeopleController(PeopleService peopleService)
+        public PeopleController(IPeopleService peopleService)
         {
             _peopleService = peopleService; 
         }
@@ -29,10 +29,22 @@ namespace OnionArch.Controllers
         }
 
 
-        [HttpGet(nameof(GetAll))]
+        /*[HttpGet(nameof(GetAll))]
         public IActionResult GetAll([FromQuery] Pagination @params)
         {
             var result = _peopleService.GetAll(@params);
+            if (result is not null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("No records");
+
+        }*/
+
+        [HttpGet(nameof(GetAll))]
+        public IActionResult GetAll()
+        {
+            var result = _peopleService.GetAll();
             if (result is not null)
             {
                 return Ok(result);

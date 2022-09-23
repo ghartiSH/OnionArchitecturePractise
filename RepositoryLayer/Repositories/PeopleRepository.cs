@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RepositoryLayer.Repositories
 {
-    public class PeopleRepository
+    public class PeopleRepository: IPeopleRepository
     {
         private readonly ApplicationDbContext _applicationDbContext;
         
@@ -33,6 +33,10 @@ namespace RepositoryLayer.Repositories
         public People Get(int id)
         {
             var people = _applicationDbContext.people.SingleOrDefault(p => p.PeopleId == id);
+            if (people == null)
+            {
+                return null;
+            }
             return people; 
         }
 

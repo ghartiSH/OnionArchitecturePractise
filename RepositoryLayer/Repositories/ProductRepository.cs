@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RepositoryLayer.Repositories
 {
-    public class ProductRepository
+    public class ProductRepository: IProductRepository
     {
         private readonly ApplicationDbContext _applicationDbContext;
 

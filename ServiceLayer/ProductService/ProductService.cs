@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace ServiceLayer.ProductService
 {
-    public class ProductService
+    public class ProductService: IProductService
     {
-        private ProductRepository _repository;
+        private IProductRepository _repository;
 
-        public ProductService(ProductRepository repository)
+        public ProductService(IProductRepository repository)
         {
             _repository = repository;
         }

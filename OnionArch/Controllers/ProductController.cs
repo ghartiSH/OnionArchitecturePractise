@@ -9,9 +9,9 @@ namespace OnionArch.Controllers
     [ApiController]
     public class ProductController : Controller
     {
-        private readonly ProductService _productService;
+        private readonly IProductService _productService;
 
-        public ProductController(ProductService productService)
+        public ProductController(IProductService productService)
         {
             _productService = productService;
         }
@@ -29,10 +29,22 @@ namespace OnionArch.Controllers
         }
 
 
-        [HttpGet(nameof(GetAll))]
+        /*[HttpGet(nameof(GetAll))]
         public IActionResult GetAll([FromQuery] Pagination @params)
         {
             var result = _productService.GetAll(@params);
+            if (result is not null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("No records");
+
+        }*/
+
+        [HttpGet(nameof(GetAll))]
+        public IActionResult GetAll()
+        {
+            var result = _productService.GetAll();
             if (result is not null)
             {
                 return Ok(result);

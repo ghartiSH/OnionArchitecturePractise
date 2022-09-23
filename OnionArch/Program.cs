@@ -19,10 +19,10 @@ builder.Services.AddSwaggerGen();
 
 
 //adding services and repositories
-builder.Services.AddScoped(typeof(PeopleRepository));
-builder.Services.AddScoped(typeof(ProductRepository));
-builder.Services.AddTransient<PeopleService>();
-builder.Services.AddTransient<ProductService>();
+builder.Services.AddScoped(typeof(IPeopleRepository), typeof(PeopleRepository));
+builder.Services.AddScoped(typeof(IProductRepository), typeof(ProductRepository));
+builder.Services.AddTransient<IPeopleService, PeopleService>();
+builder.Services.AddTransient<IProductService, ProductService>();
 
 
 var app = builder.Build();

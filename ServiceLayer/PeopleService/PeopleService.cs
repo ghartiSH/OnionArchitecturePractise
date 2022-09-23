@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace ServiceLayer.PeopleService
 {
-    public class PeopleService
+    public class PeopleService : IPeopleService
     {
-        private PeopleRepository _repository;
+        private IPeopleRepository _repository;
         
-        public PeopleService(PeopleRepository repository)
+        public PeopleService(IPeopleRepository repository)
         {
             _repository = repository;
         }

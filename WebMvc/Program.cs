@@ -14,10 +14,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped(typeof(PeopleRepository));
-builder.Services.AddScoped(typeof(ProductRepository));
-builder.Services.AddTransient<PeopleService>();
-builder.Services.AddTransient<ProductService>();
+builder.Services.AddScoped(typeof(IPeopleRepository), typeof(PeopleRepository));
+builder.Services.AddScoped(typeof(IProductRepository), typeof(ProductRepository));
+builder.Services.AddTransient<IPeopleService, PeopleService>();
+builder.Services.AddTransient<IProductService, ProductService>();
 
 var app = builder.Build();
 
