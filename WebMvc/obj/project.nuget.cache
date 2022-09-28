@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "pFzDTqHR/48yTJQrBYjp6xSoa2lJXoyGzHe7TIFylllV4z02usa6VPpn0IDOkfqHey3wLdKHr4fmoaxdZZeYFg==",
+  "dgSpecHash": "GYd3VFbteBt4pTRByhvS5mIVNO8kaDGMSyDQKtKgOQIs/ievj0w7DOZqO23smdXqr5cqdjEDqoTMzvhEi28O9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\bhara\\Desktop\\AppDev Final\\OnionArch\\WebMvc\\WebMvc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bhara\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
+    "C:\\Users\\bhara\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
     "C:\\Users\\bhara\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\bhara\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
     "C:\\Users\\bhara\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",

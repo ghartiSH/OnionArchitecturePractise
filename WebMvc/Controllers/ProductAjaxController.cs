@@ -7,8 +7,8 @@ namespace WebMvc.Controllers
     public class ProductAjaxController : Controller
     {
 
-        private readonly ProductService _productService;
-        public ProductAjaxController(ProductService productService)
+        private readonly IProductService _productService;
+        public ProductAjaxController(IProductService productService)
         {
             _productService = productService;
         }

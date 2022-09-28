@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "V2b/fhZF+x15eYsbIJ6yMB60Mx3T5weeGabRPvq8ALenhvu4NgpqORRay4EpscUX501Trsw59OCibGbHaGwgvg==",
+  "dgSpecHash": "C7XYTMk5P5AedJowOqICIE324q8YVtc/4hNgLIVIhSJ5lmOthb4amFVGVljoO+lrMojd7eQlqwTaJaA+8jEmSA==",
   "success": true,
   "projectFilePath": "C:\\Users\\bhara\\Desktop\\AppDev Final\\OnionArch\\OnionArch\\OnionArch.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bhara\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
+    "C:\\Users\\bhara\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
     "C:\\Users\\bhara\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\bhara\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\bhara\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

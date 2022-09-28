@@ -7,8 +7,8 @@ namespace WebMvc.Controllers
 {
     public class PeopleController : Controller
     {
-        private readonly PeopleService _peopleService;
-        public PeopleController(PeopleService peopleService)
+        private readonly IPeopleService _peopleService;
+        public PeopleController(IPeopleService peopleService)
         {
             _peopleService = peopleService;
         }

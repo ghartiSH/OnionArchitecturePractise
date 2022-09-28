@@ -154,3 +154,4 @@ C:\Users\bhara\Desktop\AppDev Final\OnionArch\Tests\obj\Debug\net6.0\Tests.pdb
 C:\Users\bhara\Desktop\AppDev Final\OnionArch\Tests\obj\Debug\net6.0\Tests.genruntimeconfig.cache
 C:\Users\bhara\Desktop\AppDev Final\OnionArch\Tests\obj\Debug\net6.0\ref\Tests.dll
 C:\Users\bhara\Desktop\AppDev Final\OnionArch\Tests\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\bhara\Desktop\AppDev Final\OnionArch\Tests\bin\Debug\net6.0\FluentValidation.dll

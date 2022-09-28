@@ -67,3 +67,4 @@ C:\Users\bhara\Desktop\AppDev Final\OnionArch\WebMvc\bin\Debug\net6.0\DomainLaye
 C:\Users\bhara\Desktop\AppDev Final\OnionArch\WebMvc\bin\Debug\net6.0\RepositoryLayer.pdb
 C:\Users\bhara\Desktop\AppDev Final\OnionArch\WebMvc\bin\Debug\net6.0\ServiceLayer.pdb
 C:\Users\bhara\Desktop\AppDev Final\OnionArch\WebMvc\obj\Debug\net6.0\WebMvc.csproj.CopyComplete
+C:\Users\bhara\Desktop\AppDev Final\OnionArch\WebMvc\bin\Debug\net6.0\FluentValidation.dll

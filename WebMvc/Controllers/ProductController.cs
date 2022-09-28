@@ -7,8 +7,8 @@ namespace WebMvc.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly ProductService _productService;
-        public ProductController(ProductService productService)
+        private readonly IProductService _productService;
+        public ProductController(IProductService productService)
         {
             _productService = productService;
         }

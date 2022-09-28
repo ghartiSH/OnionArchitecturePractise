@@ -12,13 +12,10 @@ namespace DomainLayer.Models
     {
         [Key]
         public int ProductId { get; set; }
-        [Required]
         public string? ProductName { get; set; }
-        [Required]
         public int Price { get; set; }
 
         [ForeignKey ("People")]
-        [Required]
         public int  PeopleId { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sRIpf8Cmg8CQIhF7ISVTJgXfTnoV5pQAR+0/HwJJg2brwETTX3NJh9Zn1u6Ht1IeyTH9GMhR+TmBtxfJI4awdA==",
+  "dgSpecHash": "BbLdEjb733nrUDc75BpUuJXWwncQxhYxcQFO8cO8d0E1anwXSn6h41jmVNnJIEOpqnaZsh+f1udrNVR7AbR/Iw==",
   "success": true,
   "projectFilePath": "C:\\Users\\bhara\\Desktop\\AppDev Final\\OnionArch\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\bhara\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\bhara\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\bhara\\.nuget\\packages\\fluentassert\\1.0.0.11\\fluentassert.1.0.0.11.nupkg.sha512",
+    "C:\\Users\\bhara\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
     "C:\\Users\\bhara\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\bhara\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
     "C:\\Users\\bhara\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",

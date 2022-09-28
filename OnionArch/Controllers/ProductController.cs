@@ -1,5 +1,6 @@
 ﻿using DomainLayer.Models;
 using DomainLayer.ModelViews;
+using DomainLayer.Validators;
 using Microsoft.AspNetCore.Mvc;
 using ServiceLayer.ProductService;
 
@@ -56,16 +57,39 @@ namespace OnionArch.Controllers
         [HttpPost(nameof(Insert))]
         public IActionResult Insert(Product product)
         {
-            _productService.Insert(product);
-            return Ok("New Product Added");
+
+            var validator = new ProductValidator();
+
+            var valid = validator.Validate(product);
+
+            if (valid.IsValid)
+            {
+                _productService.Insert(product);
+                return Ok("New Product Added");
+            }
+
+            return BadRequest(valid.Errors.Select(s => s.ErrorMessage).ToList());
 
         }
 
         [HttpPut(nameof(Update))]
         public IActionResult Update(Product product)
         {
-            _productService.Update(product);
-            return Ok("Product Updated");
+            var validator = new ProductValidator();
+
+            var valid = validator.Validate(product);
+
+            if (valid.IsValid)
+            {
+                _productService.Update(product);
+                return Ok("Product Updated");
+            }
+
+            /*_productService.Update(product);
+            return Ok("Product Updated");*/
+
+            return BadRequest(valid.Errors.Select(s => s.ErrorMessage).ToList());
+
 
         }
 

@@ -1,5 +1,6 @@
 ﻿using DomainLayer.Models;
 using DomainLayer.ModelViews;
+using DomainLayer.Validators;
 using Microsoft.AspNetCore.Mvc;
 using ServiceLayer.PeopleService;
 
@@ -56,24 +57,43 @@ namespace OnionArch.Controllers
         [HttpPost(nameof(Insert))]
         public IActionResult Insert(People people)
         {
-            if (ModelState.IsValid)
+            var validator = new PeopleValidator();
+
+            var valid = validator.Validate(people);
+
+            if (valid.IsValid)
             {
                 _peopleService.Insert(people);
                 return Ok("New People Added");
             }
-            return BadRequest("Invalid fields found");
+            /*if (ModelState.IsValid)
+            {
+                _peopleService.Insert(people);
+                return Ok("New People Added");
+            }*/
+            return BadRequest(valid.Errors.Select(s => s.ErrorMessage).ToList());
         }
 
         [HttpPut(nameof(Update))]
         public IActionResult Update(People people)
         {
-            if (ModelState.IsValid)
+            var validator = new PeopleValidator();
+
+            var valid = validator.Validate(people);
+
+            if (valid.IsValid)
+            {
+                _peopleService.Update(people);
+                return Ok("People updated");
+            }
+
+            /*if (ModelState.IsValid)
             {
                 _peopleService.Update(people);
                 return Ok("People Updated");
-            }
-            return BadRequest("Invalid fields found");
-           
+            }*/
+
+            return BadRequest(valid.Errors.Select(s => s.ErrorMessage).ToList());
 
         }
 
